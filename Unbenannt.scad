@@ -10,6 +10,13 @@ module welle(){
             rotate([0,0,i])translate([20,0,12+2.5/2])cube([2.5,1,3]);
         }
     }
+    translate([0,0,40-12-2.5])difference(){
+        translate([0,0,12])cylinder(h = 2.5, d=40+2.5);
+        for(i = [0:1:360]){
+            rotate([0,0,i])translate([20+2.5/2,0,12+2.5/2])rotate([90,0,0])cylinder(h=1, d=2.5, $fn=20);
+            rotate([0,0,i])translate([20,0,12+2.5/2])cube([2.5,1,3]);
+        }
+    }
 }
 module all(){
     welle();
